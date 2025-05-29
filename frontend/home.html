@@ -1,24 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <style>
-        h1   {color: blue}
-        p1   {color: red}
-    </style>
-
-    <title>Servison</title>
-
-    <a href="/projects">Projects</a>
-    <a href="/about">About me</a>
-    <link rel="stylesheet" href="/css/style.css">
-    
+  <title>Servison</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <h1>Welcome to the homepage</h1>
-    <p1>Paragraph 1</p1>
+  <nav>
+    <a href="/projects">Projects</a>
+    <a href="/about">About me</a>
+  </nav>
 
-    <script>
-    </script>
+  <h1>
+    Welcome! You are visitor #<span id="visitCount">!</span>
+  </h1>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="/js/site.js"></script>   <!-- ← only reference to your file -->
 </body>
 </html>

@@ -19,3 +19,11 @@ services:
       - action: sync
         path: ./frontend
         target: /usr/share/nginx/html
+
+  redis: 
+    image: redis:7-alpine
+    volumes:
+      - redis-data:/data
+  
+volumes:
+  redis-data:
