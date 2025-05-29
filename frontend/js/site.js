@@ -5,7 +5,7 @@ $(function () {
         $("#visitCount").text(data.visits);        // drop it in the span
       })
       .fail(function () {                          // basic fallback
-        $("#visitCount").text("--");
+        $("#visitCount").text("NaN");
       });
   });
   

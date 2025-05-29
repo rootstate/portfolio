@@ -7,13 +7,14 @@ import redis, os
 
 app = FastAPI()
 
-# Create a client
+# Create client
 redis = redis.Redis(
-    host=os.getenv("REDIS_HOST", "redis"), # Give it a service name from compose.yaml
+    host=os.getenv("REDIS_HOST", "redis"), 
     port=6379,
     decode_responses=True
 )
 
+# Must change in prod
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:3000"],
