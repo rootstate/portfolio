@@ -22,11 +22,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
 # API status checker
 @app.get("/status")
 def backendStatusMessage():
     return {"status": "OK"}
+
 
 # An api counter endpoint
 @app.get("/api/counter")
@@ -34,4 +34,14 @@ def counter():
     total = redis.incr("page visits") # Use of redis integer key that automatically increments
     return {"visits": total}
 
+@app.get("/")
+async def root():
+    return FileResponse('../frontend/home.html')
 
+@app.get("/home")
+async def home():
+    return FileResponse('../frontend/home.html')
+
+@app.get("/about")
+async def home():
+    return FileResponse('../frontend/about.html')
