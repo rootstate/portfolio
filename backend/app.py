@@ -1,11 +1,12 @@
 from fastapi import FastAPI
-from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
-
 import redis, os
 
-app = FastAPI()
+app = FastAPI(
+    title="My Portfolio API",
+    description="A showcase of backend development skills", 
+    version="1.0.0"
+)
 
 # Create client
 redis_client = redis.Redis(
@@ -14,7 +15,7 @@ redis_client = redis.Redis(
     decode_responses=True
 )
 
-# Must change in prod
+# CORS middleware
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:3000"],
@@ -24,27 +25,11 @@ app.add_middleware(
 
 # API status checker
 @app.get("/status")
-def backendStatusMessage():
+def backend_status_message():
     return {"status": "OK"}
 
 # An api counter endpoint
 @app.get("/api/counter")
 def counter():
-    total = redis_client.incr("page visits") # Use of redis integer key that automatically increments
+    total = redis_client.incr("page visits")
     return {"visits": total}
-
-@app.get("/")
-async def root():
-    return FileResponse('../frontend/home.html')
-
-@app.get("/home")
-async def home():
-    return FileResponse('../frontend/home.html')
-
-@app.get("/about")
-async def about():
-    return FileResponse('../frontend/about.html')
-
-@app.get("/projects")
-async def projects():
-    return FileResponse("../frontend/projects.html")

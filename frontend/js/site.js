@@ -8,8 +8,3 @@ $(function () {
         $("#visitCount").text("NaN");
       });
   });
-
-$(".js-menu-toggle").on("click", () => {
-    $(".header_nav").toggleClass("is-open");
-})
-  
