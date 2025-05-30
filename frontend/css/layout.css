@@ -1,0 +1,84 @@
+/* container */
+.container {
+    width: 90%;
+    max-width: var(--max-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: var(--space-unit);
+    padding-bottom: var(--space-unit);
+}
+
+/* Header/nav */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: var(--space-unit);
+}
+
+/* Titel (logo) */
+.header_logo {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+/* For mobile, hide nav behind a toggle */
+.header_nav {
+    display: none;
+}
+
+/* Hamburger */
+.header_toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* On a tabler (min-width 768px) we show nav and hide toggle */
+@media (min-width: 768px) {
+    .header_nav {
+        display: flex;
+        gap: var(--space-unit);
+    }
+    .header_toggle{
+        display: none;
+    }
+}
+
+/* Hero section */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-unit);
+    align-items: center;
+}
+
+/* Left side, intro text */
+.hero_content { }
+
+.is-open {
+    display: flex;
+}
+
+/* Right side, image */
+.hero_image {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  background-color: #eee;  /* placeholder bg */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #666;
+  font-size: var(--font-base);
+}
+
+/* Tablet+ (min-width 768px) we do two column layout */
+@media (min-width: 768px) {
+    .hero {
+        grid-template-columns: repeat(2, 1fr);
+        gap: calc(var(--space-unit*2))
+    }
+}

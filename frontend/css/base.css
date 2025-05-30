@@ -1,0 +1,60 @@
+/* Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Variables */
+:root {
+    /* Different colors */
+    --color-bg: #ffffff3a;
+    --color-text: #c7c7c7;
+    --color-accent: #03d63f8e;
+
+    /* Text */
+    --font-base: 1rem;
+    --font-scale-step: 1.25;
+
+    /* Spacing */
+    --space-unit: 1rem;
+
+    --max-width: 75rem; /* around 1200px */
+}
+
+/* Base typography */
+html {
+    font-size: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Raleway", sans-serif;
+    line-height: 1.5;
+    color: var(--color-text);
+    background-color: var (--color-bg);
+}
+
+/* Modular heading */
+h1 { font-size: calc(var(--font-base) * var(--font-scale-step) * var(--font-scale-step)); }
+h2 { font-size: calc(var(--font-base) * var(--font-scale-step)); }
+h3 { font-size: var(--font-base); }
+h4 { font-size: calc(var(--font-base) / var(--font-scale-step)); }
+
+/* Paragraphs */
+p {
+    margin-bottom: var(--space-unit);
+}
+
+/* Links */
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    text-decoration: underline
+}

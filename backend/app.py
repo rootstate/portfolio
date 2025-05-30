@@ -8,7 +8,7 @@ import redis, os
 app = FastAPI()
 
 # Create client
-redis = redis.Redis(
+redis_client = redis.Redis(
     host=os.getenv("REDIS_HOST", "redis"), 
     port=6379,
     decode_responses=True
@@ -27,11 +27,10 @@ app.add_middleware(
 def backendStatusMessage():
     return {"status": "OK"}
 
-
 # An api counter endpoint
 @app.get("/api/counter")
 def counter():
-    total = redis.incr("page visits") # Use of redis integer key that automatically increments
+    total = redis_client.incr("page visits") # Use of redis integer key that automatically increments
     return {"visits": total}
 
 @app.get("/")
@@ -43,5 +42,9 @@ async def home():
     return FileResponse('../frontend/home.html')
 
 @app.get("/about")
-async def home():
+async def about():
     return FileResponse('../frontend/about.html')
+
+@app.get("/projects")
+async def projects():
+    return FileResponse("../frontend/projects.html")
