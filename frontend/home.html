@@ -1,28 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Portfolio</title>
-
-
-    <link rel="stylesheet" href="/css/base.css">
-    <link rel="stylesheet" href="/css/layout.css">
-    <link rel="stylesheet" href="/css/components.css">
-    <link rel="stylesheet" href="/css/utilities.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edward's Portfolio</title>
+    <link rel="stylesheet" href="/css/home.css">
+   
 </head>
-
 <body>
-  <nav>
-    <a href="/home">Home</a>
-    <a href="/projects">Projects</a>
-    <a href="/about">About me</a>
-  </nav>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/home" class="logo">Edward Nordén</a>
+            <ul class="nav-links">
+                <li><a href="/home">Home</a></li>
+                <li><a href="/projects">Projects</a></li>
+                <li><a href="/about">About</a></li>
+            </ul>
+        </div>
+    </nav>
 
-  <h1>
-    Welcome! You are visitor #<span id="visitCount">!</span>
-  </h1>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1>Welcome to My Portfolio</h1>
+            <p>Systems Development Student at Linköping University</p>
+            <div class="visitor-count">
+                You are visitor #<span id="visitCount">...</span>
+            </div>
+        </div>
+    </section>
 
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="/js/site.js"></script>  
+    <!-- Content -->
+    <main class="content">
+        <section class="section">
+            <h2>What I Do</h2>
+            <p>I'm passionate about building modern applications and learning new technologies. Currently studying Systems Development and working on various projects to expand my skills.</p>
+            
+            <div class="cards">
+                <div class="card">
+                    <h3>Web Development</h3>
+                    <p>Building full-stack applications with modern frameworks and technologies. From frontend design to backend APIs.</p>
+                </div>
+                <div class="card">
+                    <h3>Systems Design</h3>
+                    <p>Scalable system architecture, databases, and how to build robust applications.</p>
+                </div>
+                <div class="card">
+                    <h3>Continuous Learning</h3>
+                    <p>Always exploring new technologies and best practices in software development and system design.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Get in Touch</h2>
+            <p>Feel free to explore my projects and learn more about my journey. I'm always open to connecting, so get in touch!</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Edward's Portfolio. Built with FastAPI & Docker.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="/js/site.js"></script>
 </body>
 </html>

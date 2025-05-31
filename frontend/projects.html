@@ -2,25 +2,101 @@
 <html>
 <head>
   <title>Portfolio</title>
-
-
   <link rel="stylesheet" href="/css/base.css">
-  <link rel="stylesheet" href="/css/layout.css">
-  <link rel="stylesheet" href="/css/components.css">
-  <link rel="stylesheet" href="/css/utilities.css">
-  
+  <link rel="stylesheet" href="/css/projects.css">
 </head>
 
 <body>
-  <nav>
-    <a href="/home">Home</a>
-    <a href="/projects">Projects</a>
-    <a href="/about">About</a>
+  <!-- Navigation -->
+  <nav class="navbar">
+      <div class="nav-container">
+          <a href="/home" class="logo">Edward Nordén</a>
+          <ul class="nav-links">
+              <li><a href="/home">Home</a></li>
+              <li><a href="/projects">Projects</a></li>
+              <li><a href="/about">About</a></li>
+          </ul>
+      </div>
   </nav>
 
-  <h1>
-    Welcome to the projects page!
-  </h1>
+  <!-- Page Header -->
+  <section class="page-header">
+      <div class="hero-container">
+          <h1>My Projects</h1>
+          <p>A collection of things I've built and learned from</p>
+      </div>
+  </section>
 
+  <!-- Content -->
+  <main class="content">
+      <div class="projects-grid">
+          <!-- Project 1 -->
+          <div class="project-card">
+              <div class="project-image">1</div>
+              <div class="project-content">
+                  <h3 class="project-title">Portfolio Website</h3>
+                  <p class="project-description">
+                      A full-stack portfolio website built with FastAPI backend, Redis for caching, and Docker for containerization.
+                  </p>
+                  <div class="project-tags">
+                      <span class="tag">FastAPI</span>
+                      <span class="tag">Redis</span>
+                      <span class="tag">Docker</span>
+                      <span class="tag">HTML/CSS</span>
+                      <span class="tag">jQuery</span>
+                  </div>
+                  <div class="project-links">
+                      <a href="https://github.com/rootstate/portfolio" target="_blank" class="btn btn-secondary">GitHub</a>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card">
+              <div class="project-image">2</div>
+              <div class="project-content">
+                  <h3 class="project-title">Pac-Man Clone</h3>
+                  <p class="project-description">
+                      A Pac-Man gamme that has two levels, level-file parsing and two enemies and some powerups. Try to beat my highscore!
+                  </p>
+                  <div class="project-tags">
+                      <span class="tag">Java</span>
+                      <span class="tag">JavaFX</span>
+                      
+                  </div>
+                  <div class="project-links">
+                      <a href="https://github.com/rootstate/Pac-Man-Clone" target="_blank" class="btn btn-secondary">GitHub</a>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-card">
+              <div class="project-image">3</div>
+              <div class="project-content">
+                  <h3 class="project-title">Raspberry Pi IoT Sensor</h3>
+                  <p class="project-description">
+                      A temperature and humidity sensor using a Raspberry Pi Pico W, with sensor data exposed to Ubidots for an interactive dashboard.
+                  </p>
+                  <div class="project-tags">
+                      <span class="tag">MicroPython</span>
+                      <span class="tag">Raspberry Pi</span>
+                      <span class="tag">Ubidots API</span>
+                  </div>
+                  <div class="project-links">
+                      <a href="https://github.com/rootstate/TempHumiditySensor" target="_blank" class="btn btn-secondary">GitHub</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+      <p>&copy; 2025 Edward's Portfolio. Built with FastAPI & Docker.</p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="/js/site.js"></script>
 </body>
 </html>
