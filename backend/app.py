@@ -1,8 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import redis, os
-
-# For API docs
 from fastapi import HTTPException
 from pydantic import BaseModel
 from typing import List, Optional
