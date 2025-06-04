@@ -4,16 +4,18 @@ import redis, os
 from fastapi import HTTPException
 from pydantic import BaseModel
 from typing import List, Optional
+from datetime import datetime
 
 app = FastAPI(
     title="My Portfolio API",
-    description="A showcase of backend development skills", 
+    description="A showcase", 
     version="1.0.0"
 )
 
-class CounterResponse(BaseModel):
-    visits: int
-    timestamp: str
+class StatusModel(BaseModel):
+    name: str
+    desc: str 
+    time: str 
 
 # Create client
 redis_client = redis.Redis(
@@ -31,9 +33,15 @@ app.add_middleware(
 )
 
 # API status checker
-@app.get("/status")
+@app.get("/status", response_model=StatusModel)
 def backend_status_message():
-    return {"status": "OK"}
+    dt = datetime.now()
+
+    return StatusModel(
+        name="Portfolio API",
+        desc="API is running successfully on port 8000", 
+        time=dt.isoformat()
+    )
 
 # An api counter endpoint
 @app.get("/api/counter")
