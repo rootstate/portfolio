@@ -23,8 +23,3 @@ docker compose up --build
 * GET - /status - liveness probing
 * GET - /api/counter - Auto inrementing Redis key (returns {"visits": N}
 
-## Licens
-MIT - do whatever you want, i dont care :)
-
-## Note from author
-Make sure to check in regularly, will keep iterating and adding functionality until hosting (probably AWS). Hope to see you again :)
