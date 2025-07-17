@@ -1,5 +1,5 @@
 # Dockerised Portfolio Stack
-A small in progress stie that demonstrates the following:
+A small in progress site that demonstrates the following:
 * **FastAPI** backend -> JSON API, Redis powered visit counter
 * **Nginx** static frontend -> just plain HTML + a touch of jQuery
 * **Docker Compose** orchestrataion -> seperate Dockerfiles for front/backend
