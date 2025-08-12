@@ -15,7 +15,7 @@ git clone https://github.com/rootstate/portfolio.git
 # First run/build
 docker compose up --build
 ```
-**Note:**
+**Note**
 * Frontend is exposed to port 3000
 * Backend is exposed to 8000 (JSON return)
 
